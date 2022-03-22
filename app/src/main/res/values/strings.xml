@@ -1,0 +1,10 @@
+<resources>
+    <!-- Recursos Globais -->
+    <string name="app_name">Aplicativos Móveis</string>
+    <string name="label_btn_imc">Calcular\nIMC</string>
+
+    <!-- Recursos Activity IMC -->
+    <string name="txt_imc_massa">Digite sua Massa</string>
+    <string name="txt_imc_altura">Digite sua Altura</string>
+    <string name="label_btn_imc_imc">Calcular IMC</string>
+</resources>
