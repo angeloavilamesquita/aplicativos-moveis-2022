@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicativosMóveis">
         <activity
-            android:name=".ImcActivity"
+            android:name=".FramelayoutActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".FuelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BmiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

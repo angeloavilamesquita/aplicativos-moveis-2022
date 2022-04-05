@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        tools:context=".ImcActivity">
+        tools:context=".BmiActivity">
 
         <TextView
-            android:id="@+id/txt_imc_titulo"
+            android:id="@+id/txt_fuel_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/myTextView"
@@ -23,37 +23,37 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:textSize="23sp"
-            android:text="Calculo IMC" />
+            android:text="@string/txt_fuel_title" />
 
         <EditText
-            android:id="@+id/edt_imc_massa"
+            android:id="@+id/edt_fuel_gas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/myEditText"
             android:ems="10"
-            android:inputType="number"
-            android:maxLength="3"
-            android:hint="@string/txt_imc_massa"/>
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:hint="@string/txt_fuel_gas"/>
 
         <EditText
-            android:id="@+id/edt_imc_altura"
+            android:id="@+id/edt_fuel_alcohol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/myEditText"
             android:ems="10"
-            android:inputType="number"
-            android:maxLength="3"
-            android:hint="@string/txt_imc_altura"/>
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:hint="@string/txt_fuel_alcohol"/>
 
         <Button
-            android:id="@+id/btn_imc_calcular"
+            android:id="@+id/btn_fuel_calculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/myTextView"
-            android:text="@string/label_btn_imc_imc" />
+            android:text="@string/label_fuel_btn_calculate" />
 
         <TextView
-            android:id="@+id/txt_imc_classificacao"
+            android:id="@+id/txt_best_fuel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
