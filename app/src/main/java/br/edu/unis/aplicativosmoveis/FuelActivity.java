@@ -37,11 +37,11 @@ public class FuelActivity extends AppCompatActivity {
     private void buttonSettings() {
         btnCalculate.setOnClickListener(view -> {
             hideKeyboard();
-            if (validateFields() == false) {
+            if (!validateFields()) {
                 Toast.makeText(
-                        FuelActivity.this,
-                        getString(R.string.txt_fuel_validate_fields),
-                        Toast.LENGTH_LONG
+                    FuelActivity.this,
+                    getString(R.string.txt_fuel_validate_fields),
+                    Toast.LENGTH_LONG
                 ).show();
             } else {
                 Double result = calculate();
@@ -65,10 +65,7 @@ public class FuelActivity extends AppCompatActivity {
         }
         boolean hasInvalidGasValue = edtGas.getText().toString().startsWith("0");
         boolean hasInvalidAlcoholValue = edtAlcohol.getText().toString().startsWith("0");
-        if (hasInvalidGasValue || hasInvalidAlcoholValue ) {
-            return false;
-        }
-        return true;
+        return !hasInvalidGasValue && !hasInvalidAlcoholValue;
     }
 
     private double calculate() {
@@ -76,8 +73,7 @@ public class FuelActivity extends AppCompatActivity {
         Double gasValue = Double.parseDouble(textGasValue);
         String textAlcoholValue = edtAlcohol.getText().toString();
         Double alcoholValue = Double.parseDouble(textAlcoholValue);
-        Double percentage = alcoholValue / gasValue;
-        return percentage;
+        return alcoholValue / gasValue;
     }
 
     @StringRes
@@ -91,12 +87,10 @@ public class FuelActivity extends AppCompatActivity {
     private void showResult(int fuel) {
         txtBestFuel.setText(fuel);
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.txt_fuel_best_fuel))
-                .setMessage(fuel)
-                .setPositiveButton(android.R.string.ok, (dialogInterface, i) -> {
-                    cleanFields();
-                })
-                .create();
+            .setTitle(getString(R.string.txt_fuel_best_fuel))
+            .setMessage(fuel)
+            .setPositiveButton(android.R.string.ok, (dialogInterface, i) -> cleanFields())
+            .create();
         dialog.show();
     }
 
